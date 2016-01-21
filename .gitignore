@@ -2,4 +2,4 @@
 parts
 stage
 snap
-
+build_snap.sh
