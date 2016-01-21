@@ -5,7 +5,6 @@ summary: A visual tool for wiring the Internet of Things
 description: Node-RED is a tool for wiring together hardware devices, APIs and online services in new and interesting ways.
 icon: node-red.png
 
-
 services:
   red:
     start: bin/launch
