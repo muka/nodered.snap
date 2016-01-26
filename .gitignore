@@ -2,3 +2,5 @@
 parts
 stage
 snap
+tmp
+.remote-sync.json
