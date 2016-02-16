@@ -1,15 +1,19 @@
 name: node-red
-version: 1.0
-vendor: create-net <lcapra@create-net.org>
+version: 0.11
 summary: A visual tool for wiring the Internet of Things
 description: Node-RED is a tool for wiring together hardware devices, APIs and online services in new and interesting ways.
 icon: node-red.png
 
-services:
+apps:
   red:
-    start: bin/launch
+    command: bin/launch
+    uses: [ listener ]
+
+uses:
+  listener:
+    type: migration-skill
     caps:
-      - network-service
+     - network-service
 
 parts:
   red:
