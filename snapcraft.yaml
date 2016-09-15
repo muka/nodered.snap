@@ -11,6 +11,7 @@ apps:
     command: bin/launch
     plugs:
       - network-bind
+      - network
 
 parts:
   red:
