@@ -15,7 +15,7 @@
  **/
 
 // Adapt to snappy FS requirements
-var snap_data = process.env.SNAP_APP_USER_DATA_PATH
+var snap_data = process.env.SNAP_USER_DATA
 
 // The `https` setting requires the `fs` module. Uncomment the following
 // to make it available:

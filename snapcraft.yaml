@@ -1,19 +1,16 @@
-name: node-red
-version: 0.11
+name: nodered
+version: 0.12
 summary: A visual tool for wiring the Internet of Things
 description: Node-RED is a tool for wiring together hardware devices, APIs and online services in new and interesting ways.
-icon: node-red.png
+confinement: strict
+grade: stable
 
 apps:
   red:
+    daemon: simple
     command: bin/launch
-    uses: [ listener ]
-
-uses:
-  listener:
-    type: migration-skill
-    caps:
-     - network-service
+    plugs:
+      - network-bind
 
 parts:
   red:
@@ -21,10 +18,14 @@ parts:
     node-packages:
       - node-red
   settings:
-    plugin: copy
-    files:
-      settings.js: settings.js
-  launcher:
-    plugin: copy
-    files:
-      start.sh: bin/launch
+    plugin: dump
+    source: settings
+    filesets:
+      settings:
+        - .
+    organize:
+      start.sh : bin/launch
+    snap: 
+      - .
+    filesets:
+      all: [ . ]

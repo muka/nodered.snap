@@ -1,6 +1,6 @@
 *.snap
+prime
 parts
 stage
-snap
 tmp
 .remote-sync.json
